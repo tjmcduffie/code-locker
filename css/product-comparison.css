@@ -1,0 +1,169 @@
+/**
+ * New and Overriding Styles for the branded comparison page
+ */
+
+/* Fixes bug where background image partially disappears when scrolling. */
+.ie7 .clientns-main {
+    zoom: 1;
+}
+
+/* Override background image from card-details-min.css */
+.clientns-main .details-clientns-hero-container {
+    background: none;
+}
+
+/* Override background image from card-details-min.css */
+.clientns-main .details-clientns-tab-content-container {
+    background: none;
+}
+
+/* Override heigt set in card-details-min.css */
+.clientns-main .hero-main {
+    height: 185px;
+    background: none;
+}
+
+.details-clientns-hero-container style {
+    display: none;
+}
+
+/* Overrides height and padding set in card-compare.css to accommodate new design */
+#three-product-hero.clientns-rewards {
+    height: 185px;
+    padding: 75px 0 0;
+}
+
+/* New styles for "intro" */
+#three-product-hero p.intro {
+    text-transform: uppercase;
+    color: #002663;
+    font-size: 12px;
+    font-family: "BentonSans-Md", Arial, Verdana, Helvetica, san-serif;
+    margin: 21px 0px 0px;
+}
+
+/* Overrides padding top set in card-compare.css */
+#three-product-hero h1 {
+    margin-top: 10px;
+    font-weight: normal;
+}
+
+/* New styles for H1 design */
+#three-product-hero h1 span {
+    font: 42px/1.2 "BentonSans-Bk", Arial, Verdana, Helvetica, san-serif;
+    background-color: #002663;
+    color: #FFFFFF;
+    padding: 5px 15px;
+    margin-bottom: -5px
+}
+
+/* Oh, IE7, you're awesome */
+.ie7 #three-product-hero h1 span {
+    white-space: nowrap;
+}
+
+/* Overrides styles set in to different blocks within card-compare.css */
+#three-product-hero h1 sup {
+    font-size: 14px;
+    line-height: 14px;
+    top: 10px;
+}
+
+/* Overrides top position set in card-compare.css */
+.ie7 #three-product-hero h1 sup {
+    top: -1.5em;
+}
+
+/* Overrides font size and line height from card-details-min.css */
+/* Overrides color from style-min.css */
+#three-product-hero h1 a.modal-btn {
+    color: white;
+    font-size: 14px !important;
+    line-height: 14px;
+    vertical-align: top;
+}
+
+/* Set to allow absolute positioning of sidebar wen scrolling */
+#three-product-content {
+    position: relative;
+}
+
+/* New styles for the learn more button treatment */
+#three-product-content .button.learn-more {
+    margin-bottom: 0px;
+}
+
+/* New styles for the learn more button treatment */
+#three-product-content .button.learn-more,
+#three-product-content .button.learn-more span{
+    color: #00488c;
+    background-color: transparent;
+    background-image: url(../images/button-grey-gradient.gif);
+}
+
+/* Override bottom margin of the button holder to accommodate new button order */
+#three-product-content .button-holder {
+    margin-bottom: 40px;
+}
+
+/* New styles for the learn more button position */
+#three-product-content .button-holder.learn-more {
+    position: relative;
+    top: 35px;
+    margin-bottom: -60px;
+}
+
+/* Override font size and family */
+#three-product-content h3.first-head{
+    font-size: 24px;
+    font-family: "BentonSans-Bk", Arial, Verdana, Helvetica, san-serif;
+}
+
+/* Override font family and padding (padding adjusts for new font character widths) */
+#three-product-content .title-card {
+    font-family: "BentonSans-Bd", Arial, Verdana, Helvetica, san-serif;
+    padding: 0px 10px;
+}
+
+/* Override font weight and family */
+#three-product-content .amount {
+    font-family: "BentonSans-Md", Arial, Verdana, Helvetica, san-serif;
+    font-weight: normal;
+}
+
+/* Override font family */
+#three-product-content .questions-box h3 {
+    font-family: "BentonSans-Md", Arial, Verdana, Helvetica, san-serif;
+}
+
+
+/**
+ * Sticky Sidebar
+ */
+
+#three-product-content .sticky-top {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+#three-product-content .sticky-fixed {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    margin-top: 0px;
+}
+
+#three-product-content .sticky-bottom {
+   position: absolute;
+   bottom: 0px;
+   right: 0px;
+}
+
+#three-product-content .sidebarClone {
+    position: relative;
+    top: 50px;
+    margin: 0px;
+    padding: 0px;
+    height: 0px;
+}
