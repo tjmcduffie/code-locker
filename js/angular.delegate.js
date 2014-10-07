@@ -1,3 +1,4 @@
+/* global goog, angular, app */
 /**
  * @fileoverview Allows you to delegate a custom behavior when a child element
  *               is the recipient of a browser event.
@@ -6,9 +7,9 @@
  */
 'use strict';
 
-goog.provide('partners.common.Delegate');
+goog.provide('app.common.Delegate');
 
-goog.require('partners.common.module');
+goog.require('app.common.module');
 
 
 
@@ -16,7 +17,7 @@ goog.require('partners.common.module');
  * Constructor for Delegate directive.
  * @constructor
  */
-partners.common.Delegate = function() {
+app.common.Delegate = function() {
 
 };
 
@@ -30,7 +31,7 @@ partners.common.Delegate = function() {
  * @param {Object} e Original event.
  * @constructor
  */
-partners.common.Delegate.EventProxy = function(e) {
+app.common.Delegate.EventProxy = function(e) {
   var ignoredProps = /^([A-Z]|layer[XY]$)/;
   var eventMethods = {
     preventDefault: 'isDefaultPrevented',
@@ -69,7 +70,7 @@ partners.common.Delegate.EventProxy = function(e) {
  * DOM attribute that instantiates directive.
  * @type {string}
  */
-partners.common.Delegate.DIRECTIVE_NAME = 'parComDelegate';
+app.common.Delegate.DIRECTIVE_NAME = 'parComDelegate';
 
 
 /**
@@ -78,16 +79,16 @@ partners.common.Delegate.DIRECTIVE_NAME = 'parComDelegate';
  *     expression strings into functions.
  * @return {Function}
  */
-partners.common.Delegate.compile = function($parse) {
+app.common.Delegate.compile = function($parse) {
   return function(scope, elem, attrs) {
-    var parts = attrs[partners.common.Delegate.DIRECTIVE_NAME].split(',');
+    var parts = attrs[app.common.Delegate.DIRECTIVE_NAME].split(',');
     var eventName = parts[0].replace(/^\s+|\s+$/g, '');
     var selector = parts[1].replace(/^\s+|\s+$/g, '');
     var method = $parse(parts[2].replace(/^\s+|\s+$/g, ''));
 
     elem.bind(angular.lowercase(eventName), function(e) {
       var trigger = e.target;
-      var delEvent = new partners.common.Delegate.EventProxy(e);
+      var delEvent = new app.common.Delegate.EventProxy(e);
 
       while (trigger !== null && angular.uppercase(trigger.nodeName) !==
           angular.uppercase(selector)) {
@@ -108,5 +109,5 @@ partners.common.Delegate.compile = function($parse) {
 
 
 // Apply directive to common module
-partners.common.module.directive(partners.common.Delegate.DIRECTIVE_NAME,
-    ['$parse', partners.common.Delegate.compile]);
+app.common.module.directive(app.common.Delegate.DIRECTIVE_NAME,
+    ['$parse', app.common.Delegate.compile]);
